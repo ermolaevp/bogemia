@@ -1,0 +1,8 @@
+.idea
+.DS_Store
+backup
+templates_c
+Proxies
+vendor
+composer.lock
+public/img/catalog/*

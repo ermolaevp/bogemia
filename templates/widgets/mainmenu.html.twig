@@ -1,0 +1,18 @@
+<ul class="nav">
+    <li class="{% if (category is not null and category.getId() == categories.0.getId()) %}active {% endif %}dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ categories.0.getDisplayName() }} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ categories.0.getCategoryLink() }}">Показать все</a></li>
+            <li class="divider"></li>
+            {% for subcat in categories.0.getSubcategories() %}
+                <li><a href="{{ subcat.getSubcategoryLink() }}">{{ subcat.getDisplayName()|title }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% for cat in categories %}
+        {% if cat.getId() != categories.0.getId() %}
+            <li{% if (category is not null and category.getId() == cat.getId()) %} class="active" {% endif %}><a href="{{ cat.getCategoryLink() }}">{{ cat.getDisplayName() }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+

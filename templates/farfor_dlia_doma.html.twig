@@ -1,0 +1,18 @@
+{% extends 'catalog.html.twig' %}
+{% block products %}
+    <div class="row">
+        <div class="span9">
+            <h3>Фарфор для дома</h3>
+            <p>{{ category.getDescription() }}</p>
+        </div>
+        {% for subcategory in category.getSubcategories() %}
+            <div class="span3">
+                <div class="icons-box">
+                    <a href="/thun/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}"><img src="/img/catalog/thun/categories/{{ subcategory.getId() }}.jpg"/></a>
+                    <h4><a href="/thun/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}">{{ subcategory.getDisplayName()|title }}</a></h4>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'catalog.html.twig' %}
+{% block products %}
+    <div class="row">
+        <div class="span5">
+            <div class="icons-box">
+                <img src="/img/catalog/thun/large/{{ product.getImages().first().getImageName()|default('no_image.gif') }}"/>
+            </div>
+            <div class="imageRow">
+                <div class="set">
+                    {% for image in product.getImages() %}
+                        <div class="single">
+                            <a href="/img/catalog/thun/large/{{ image.getImageName() }}" rel="lightbox[products]"><img width="100" src="/img/catalog/thun/small/{{ image.getImageName() }}"/></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="span4">
+            <h2>{{ product.getNameRu() }}</h2>
+            <h4><span class="text-error">{{ product.getPriceRu() }}</span></h4>
+            <p>{{ product.getShortInfoRu()|raw }}</p>
+        </div>
+    </div>
+{% endblock %}

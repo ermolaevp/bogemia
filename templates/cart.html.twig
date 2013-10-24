@@ -1,0 +1,53 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div class="container" xmlns="http://www.w3.org/1999/html">
+        <div class="row">
+            <div class="span12">
+                <table id="cart-positions" class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>артикул</th>
+                        <th>наименование</th>
+                        <th>количество</th>
+                        <th>цена</th>
+                        <th>сумма</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for cartPosition in customer.getCart().getPositions() %}
+                        {% set product = cartPosition.getProduct() %}
+                        <tr id="position-{{ cartPosition.getId() }}">
+                            <td class="span1 loop-index">{{ loop.index }}</td>
+                            <td class="span1">{{ product.getArticle() }}</td>
+                            <td>
+                                <div>{{ product.getNameRu() }}</div>
+                                <div><span class="text-small-gray">{{ product.getSubcategory().getCategory().getDisplayname() }} > {{ product.getSubcategory().getDisplayname() }}</span></div>
+                            </td>
+                            <td class="span2"><input rel="{{ cartPosition.getId() }}" class="input-mini input-qty text-right uneditable-input" value="{{ cartPosition.getQty() }}"/></td>
+                            <td class="span1">{{ product.getPrice() }}</td>
+                            <td class="span1 cart-price"><span class="counted-price">{{ product.getPriceRu() }}</span><span class="base-price">{{ product.getPriceRu() }}</span></td>
+                            <td class="span1"><a class="delete-cart-position" rel="{{ cartPosition.getId() }}" href="javascript:void(0)"><i class="icon-remove circle"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><div class="text-right"><b>Итого:</b></div></td>
+                        <td class="total">0</td>
+                        <td></td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="text-right">
+                <a href="/cart/confirm" class="btn btn-primary">Далее&nbsp;&raquo;</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

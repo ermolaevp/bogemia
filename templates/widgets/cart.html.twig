@@ -1,0 +1,17 @@
+<span class="text-info">Корзина:</span>
+{% if customer.getCart().getPositions().count() > 0 %}
+    <ol>
+        {% for cartPosition in customer.getCart().getPositions() %}
+            {% set product = cartPosition.getProduct() %}
+            {% set sub_category = product.getSubcategory().getSeoLink() %}
+            {% set category = product.getSubcategory().getCategory().getSeoLink() %}
+            <li><a href="/thun/{{ category }}/{{ sub_category }}/{{ product.getId() }}">{{ product.getName() }}</a></li>
+        {% endfor %}
+    </ol>
+    <div class="marg10"></div>
+    <div class="text-center">
+        <a href="/cart/" class="btn btn-small btn-success">оформить</a>
+    </div>
+    {% else %}
+    <span class="text-info">0</span>
+{% endif %}

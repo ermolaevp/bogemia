@@ -1,0 +1,34 @@
+.bottom-ctrl-h {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #333;
+    width: 100%;
+    color: #fff;
+}
+
+.ctrl-h-form-container {
+    width: 920px;
+    margin: 7px auto 0 auto;
+}
+
+.ctrl-h-form-container form{
+    margin: 0 0 5px;
+}
+
+.ctrl-h-form-container input[type="text"] {
+    font-size: 0.9em;
+    height: 15px;
+    line-height: 15px;
+    margin-left: 4px;
+}
+
+.ctrl-h-form-container input[type="checkbox"] {
+    position: relative;
+    margin-left: 4px;
+    top: -3px;
+}
+
+#checkbox-details {
+    margin-right: 20px;
+}

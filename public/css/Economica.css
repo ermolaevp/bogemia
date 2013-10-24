@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Economica';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Economica Bold'), local('Economica-Bold'), url(../fonts/Econonica-Bold.woff) format('woff');
+}
+@font-face {
+    font-family: 'Economica';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Economica Italic'), local('Economica-Italic'), url(../fonts/Economica-Italic.woff) format('woff');
+}

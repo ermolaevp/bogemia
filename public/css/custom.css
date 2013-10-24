@@ -1,0 +1,153 @@
+ul.subcat-list {
+    font-size: 110%;
+    border-left: 1px dotted #cecece;
+    border-right: 1px dotted #cecece;
+    border-top: 1px dotted #cecece;
+}
+
+ul.subcat-list li {
+    padding: 7px;
+    border-bottom: 1px dotted #cecece;
+    cursor: pointer;
+}
+
+ul.subcat-list li:hover {
+    background-color: #89c236;
+}
+
+ul.subcat-list li a {
+    color: #333;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+ul.subcat-list li:hover a, ul.subcat-list li:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul.subcat-list li.active {
+    font-weight: bolder;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-small-gray {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.text-all-cat {
+    margin: 0 0 4px 20px;
+    font-style: italic;
+    color: #888;
+    font-size: 12px;
+}
+
+.price-order-button {
+    /*position: relative;*/
+}
+
+.price-order-button span {
+    /*position: absolute;
+    top: 0;
+    left: 0;*/
+}
+
+.price-order-button button {
+    /*position: absolute;
+    top: 0;
+    right: 0;*/
+}
+
+#cart-widget {
+    border: 1px dotted #cecece;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.marg10 {
+    font-size: 1px;
+    width: 100%;
+    height: 10px;
+}
+
+.input-qty {
+    width: 40px;
+    padding: 0 3px;
+    border: 1px solid #cecece;
+    border-radius: 3px;
+}
+
+.ui-spinner-button {
+    cursor: pointer;
+}
+
+.base-price {
+    position: absolute;
+    text-indent: -9999em;
+}
+
+#cart-positions td {
+    vertical-align: middle;
+}
+
+#cart-positions td input {
+    position: relative;
+    bottom: -3px;
+    left: -3px;
+}
+
+.sitemap {
+
+}
+
+.sitemap ul {
+    margin-bottom: 7px;
+}
+
+.sitemap ul {
+    padding: 3px 0 0px 15px;
+}
+
+.img-double-border {
+    border: 1px solid #888;
+    display: inline-block;
+}
+
+.img-double-border img {
+    margin: 1px;
+}
+
+.slide-caption-right {
+    left: auto;
+    right: 20px;
+}
+
+.slide-bernadotte a {
+    color: #67a2cc;
+}
+
+.slide-kitty-ii h3 {
+    /*color: #d80330;*/
+}
+
+.slide-kitty-ii a {
+    color: #bbb;
+    text-decoration: underline;
+}
+
+.slide-kitty-ii a:hover {
+    text-decoration: none;
+}

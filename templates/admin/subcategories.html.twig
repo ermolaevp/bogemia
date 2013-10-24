@@ -1,0 +1,26 @@
+{% extends 'admin/layout.html.twig' %}
+{% block content %}
+    <div class="hero-unit">
+        <ul class="breadcrumb">
+            <li><h4><a href="/admin/thun/categories/">Категории</a> <span class="divider">/</span></h4></li>
+            <li><h4><a href="/admin/thun/categories/">{{ category.getDisplayName()|title }}</a></h4></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <table class="table table-bordered">
+                <tbody>
+                {% for subcategory in subcategories %}
+                    <tr>
+                        <td>{{ subcategory.getId() }}</td>
+                        <td><a href="/admin/thun/categories/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}/">{{ subcategory.getName() }}</a></td>
+                        <td>{{ subcategory.getDisplayName() }}</td>
+                        <td>{{ subcategory.getSeoLink() }}</td>
+                        <td class="span1"><a class="edit-info" action="subcategory" href="/admin/edit/subcategory/{{ subcategory.getId() }}/"><i class="icon-edit"></i></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

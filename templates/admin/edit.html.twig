@@ -1,0 +1,17 @@
+{% extends 'admin/layout.html.twig' %}
+{% block content %}
+    <div class="hero-unit">
+        <p>Edit subcategory "{{ name }}"</p>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <form id="edit-form" class="form-horizontal" method="post" {{ form_enctype(form) }}>
+                {{ form_widget(form) }}
+                <div>
+                    <br/>
+                    <button class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

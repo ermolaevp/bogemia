@@ -1,0 +1,70 @@
+{% extends 'admin/layout.html.twig' %}
+{% block content %}
+    <div class="hero-unit">
+        <ul class="breadcrumb">
+            <li><h4><a href="/admin/thun/categories/">Категории</a> <span class="divider">/</span></h4></li>
+            <li><h4><a href="/admin/thun/categories/{{ category.getSeoLink() }}/">{{ category.getDisplayName()|title }}</a> <span class="divider">/</span></h4></li>
+            <li><h4><a href="/admin/thun/categories/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}/">{{ subcategory.getDisplayName()|title }}</a></h4></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <table class="table table-bordered">
+                <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td colspan="4">
+                            <h4><a name="product-{{ product.getId() }}" href="/thun/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}/{{ product.getId }}">{{ product.getName() }}</a> /
+                            <a name="product-{{ product.getId() }}" href="/thun/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}/{{ product.getId }}">{{ product.getNameRu() }}</a></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="span3">
+                            {% for image in product.getImages() %}
+                                <div class="icons-box">
+                                    <a target="_blank" href="/img/catalog/thun/large/{{ image.getImageName() }}"><img src="/img/catalog/thun/medium/{{ image.getImageName() }}"/></a>
+                                </div>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <h5>Short info</h5>
+                            <p>{{ product.getShortInfo()|raw }}</p>
+                            <h5>Details</h5>
+                            <p>{{ product.getDetails()|raw }}</p>
+                            <h5>Price</h5>
+                            <p>{{ product.getPrice() }}</p>
+                        </td>
+                        <td>
+                            <h5>Краткая информация</h5>
+                            <p>{{ product.getShortInfoRu()|raw }}</p>
+                            <h5>Детали</h5>
+                            <p>{{ product.getDetailsRu()|raw }}</p>
+                            <h5>Цена</h5>
+                            <p>{{ product.getPriceRu() }}</p>
+                        </td>
+
+                        <td class="span1">
+                            <ul>
+                                <li><a target="_blank" title="original link" href="{{ product.getLink() }}"><i class="icon-globe"></i></a></li>
+                                <li><a class="edit-product-info" title="edit product info" href="/admin/edit/product/{{ product.getId() }}/"><i class="icon-edit"></i></a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="bottom-ctrl-h">
+        <div class="ctrl-h-form-container">
+            <form id="find-and-replace" class="form-inline">
+                <label for="checkbox-name">Name</label><input type="checkbox" id="checkbox-name"/>
+                <label for="checkbox-short-info">Short info</label><input type="checkbox" checked="checked" id="checkbox-short-info"/>
+                <label for="checkbox-details">Details</label><input type="checkbox" checked="checked" id="checkbox-details"/>
+                <label for="input-search">Find: </label><input type="text" class="input-xlarge" checked="checked" id="input-search"/>
+                <label for="input-replace">Replace: </label><input type="text" class="input-xlarge" id="input-replace"/>
+                <input type="submit" class="btn btn-warning btn-small" value="go!"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}

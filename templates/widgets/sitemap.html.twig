@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row sitemap">
+        <div class="span12 text-all-cat">Все категории</div>
+        <div class="span3">
+            <span><a href="/thun/{{ categories.0.getSeoLink() }}">{{ categories.0.getDisplayName() }}</a></span>
+            <ul>
+                {% for subcategory in categories.0.getSubcategories() %}
+                    {% if loop.index <= 8 %}
+                        <li><a href="{{ subcategory.getSubcategoryLink() }}">{{ subcategory.getDisplayName()|title }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="span3">
+            <span><a href="/thun/{{ categories.0.getSeoLink() }}">{{ categories.0.getDisplayName() }}</a></span>
+            <ul>
+                {% for subcategory in categories.0.getSubcategories() %}
+                    {% if loop.index > 8 %}
+                        <li><a href="{{ subcategory.getSubcategoryLink() }}">{{ subcategory.getDisplayName()|title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="span3">
+            <div>
+                <span><a href="/thun/{{ categories.1.getSeoLink() }}">{{ categories.1.getDisplayName() }}</a></span>
+                <ul>
+                    {% for subcategory in categories.1.getSubcategories() %}
+                        <li><a href="{{ subcategory.getSubcategoryLink() }}">{{ subcategory.getDisplayName()|title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <span><a href="/thun/{{ categories.2.getSeoLink() }}">{{ categories.2.getDisplayName() }}</a></span>
+                <ul>
+                    {% for subcategory in categories.2.getSubcategories() %}
+                        <li><a href="{{ subcategory.getSubcategoryLink() }}">{{ subcategory.getDisplayName()|title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="span3">
+            <span><a href="/thun/{{ categories.3.getSeoLink() }}">{{ categories.3.getDisplayName() }}</a></span>
+            <ul>
+                {% for subcategory in categories.3.getSubcategories() %}
+                    <li><a href="{{ subcategory.getSubcategoryLink() }}">{{ subcategory.getDisplayName()|title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

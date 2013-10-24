@@ -1,0 +1,47 @@
+{% extends 'catalog.html.twig' %}
+{% block products %}
+    <div class="row">
+        {% for product in products %}
+            <div class="span3">
+                <div class="icons-box">
+                    <a href="/thun/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}/{{ product.getId() }}"><img src="/img/catalog/thun/medium/{{ product.getImages().first().getImageName()|default('no_image.gif') }}"/></a>
+                    <h5><a href="/thun/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}/{{ product.getId() }}">{{ product.getNameRu() }}</a></h5>
+                    <div class="text-left">{{ product.getShortInfoRu()|raw() }}</div>
+                    <div class="marg10"></div>
+                    <h5 class="text-error">{{ product.getPriceRu() }} руб.</h5>
+                    <div class="text-center">
+                        <button id="add-product-{{ product.getId() }}" class="btn btn-small btn-info">в корзину</button>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            {% if loop.index % 3 == 0 %}
+                </div><div class="row">
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="span9">
+            <div class="pagination pagination-centered">
+                <ul>
+                    {% if page|default(1) <= 1 %}
+                        <li class="disabled"><a href="#">назад</a></li>
+                    {% else %}
+                        <li><a href="/thun/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}?page={{ page - 1 }}">назад</a></li>
+                    {% endif %}
+
+                    {% for p in pages.from..pages.till %}
+                        <li{% if p == page %} class="active"{% endif %}><a href="/thun/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}?page={{ p }}">{{ p }}</a></li>
+                    {% endfor %}
+
+                    {% if page >= pages.count %}
+                        <li class="disabled"><a href="#">далее</a></li>
+                    {% else %}
+                        <li><a href="/thun/{{ category.getSeoLink() }}/{{ subcategory.getSeoLink() }}?page={{ page + 1 }}">далее</a></li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

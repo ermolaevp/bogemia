@@ -1,0 +1,20 @@
+{
+    "name": "pavel/bohemia",
+    "require": {
+        "doctrine/dbal": "2.3.4",
+        "doctrine/orm": "2.3.3",
+        "twig/twig": "1.13.1",
+        "silex/silex": "1.0.*@dev",
+        "monolog/monolog": "1.2.1",
+        "symfony/monolog-bridge": "~2.1",
+        "symfony/twig-bridge": "~2.1",
+        "symfony/form": "~2.1",
+        "symfony/validator": "~2.1",
+        "symfony/config": "~2.1",
+        "symfony/translation": "~2.1",
+        "symfony/locale": "~2.1",
+        "twitter/bootstrap": ">=2.3.1",
+        "imagine/Imagine": "dev-master",
+        "rmccue/requests": "dev-master"
+    }
+}

@@ -1,0 +1,13 @@
+{% block field_row %}
+    {% spaceless %}
+        <dt>{{ form_label(form, label|default(null), { 'label_attr': { 'class': 'control-label' } }) }}</dt>
+        <dd>
+            {{ form_widget(form) }}
+            {% if (form_errors(form)) %}
+                <span class="help-inline">{{ form.vars.attr.errmessage|default(null)|raw }}</span>
+            {% else %}
+                <span class="help-inline">{{ form.vars.attr.example|default(null)|raw }}</span>
+            {% endif %}
+        </dd>
+    {% endspaceless %}
+{% endblock %}

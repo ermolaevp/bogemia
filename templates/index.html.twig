@@ -1,0 +1,114 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+
+<!--start: Container -->
+<div class="container">
+
+    <!-- start: Flexslider -->
+    <div class="slider">
+
+        <div class="flexslider">
+            <ul class="slides">
+
+                <li>
+                    <img src="/img/slider/barvy.jpg" alt="" />
+                    <div class="slide-caption n hidden-phone slide-caption-right">
+                        <h3>Игра цветов</h3>
+                        <p>Соберите комплект в соответствии с Вашими пожеланиями</p>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="/img/slider/bernardotte.jpg" alt="" />
+                    <div class="slide-caption hidden-phone slide-caption-right slide-bernadotte">
+                        <h3>Традиции</h3>
+                        <p><strong><a href="/thun/farfor_dlia_doma/bernadot">Бернадот</a></strong></p>
+                        <p>в течение 44 лет в нашей программе</p>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="/img/slider/design.jpg" alt="" />
+                    <div class="slide-caption hidden-phone slide-caption-right">
+                        <h3>Дизайн</h3>
+                        <p>Современный дизайн</p>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="/img/slider/hellokitty_ruz.jpg" alt="" />
+                </li>
+
+                <li>
+                    <img src="/img/slider/kitty_II.jpg" alt="" />
+                    <div class="slide-caption hidden-phone slide-kitty-ii">
+                        <h3>Hello Kitty</h3>
+                        <p><a href="/thun/detskaya_seriya/detskaya_seriya">Детская серия</a> Hello Kitty</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <!-- end: Flexslider -->
+
+    <!-- start: Hero Unit - Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <h2>Bogemia.org - интернет магазин фарфора из Чехии </h2>
+        <p>В нашем интернет-магазине Вы можете найти посуду из фарфора для ежедневного использования, кастрюли, кухонные принадлежности, форфор для детей, а также эксклюзивные и лимитированные серии издания фарфора.</p>
+    </div>
+    <!-- end: Hero Unit -->
+
+    <div class="row">
+        <div class="span3">
+            <div class="icons-box">
+                <img src="/img/thun-logo.gif"/>
+                <h4>Thun 1794 a.s.</h4>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="span9">
+            <h4>Домашний фарфор</h4>
+            <p>Компания Thun 1794 a.c. предлагает самый широкий ассортимент продукции для дома. У нас есть декоративный фарфор, который также пригоден для микроволновой печи и посудомоечной машины. Мы также предлагаем декор с использованием драгоценных металлов - золота и платины. Но такие украшения не предназначены для использования в микроволновых печах, хотя их можно мыть в посудомоечной машине.</p>
+            <p>Наши продукты сертифицированы в соответствии с правилами Европейского Сообщества и Чешской Республики. (Постановление Европейского Парламента и Совета № 1935/2004 от 27/10/2004 о материалах и изделиях в контакте с пищевыми продуктами, Постановлением Министерства здравоохранения №38/2001 по гигиеническим требованиям к продукции в контакте с пищевыми продуктами и кухней с поправками и Регламентом Комиссии (ЕС) №2023/2006 от 22 декабря 2006 года на качество процессов производства материалов и изделий, предназначенных для пищевой промышленности; дополнительно обеспечен контракт с институтом стекла в Градец-Кралове/Градец Кралове на надзор за сертифицированной продукцией.)</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- start: Row -->
+    <div class="row">
+        <div class="span4">
+            <div class="icons-box">
+                <div class="img-double-border"><a href="/thun/farfor_dlia_doma/kofeinye_servizy"><img src="/img/catalog/thun/medium/307_315.jpg"/></a></div>
+                <div class="title"><h3>Кофейные Сервизы</h3></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="icons-box">
+                <div class="img-double-border"><a href="/thun/farfor_dlia_doma/stolovye_gruppy"><img src="/img/catalog/thun/medium/432_435.jpg"/></a></div>
+                <div class="title"><h3>Столовые Группы</h3></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="icons-box">
+                <div class="img-double-border"><a href="/thun/farfor_dlia_doma/chainye_servizy"><img src="img/catalog/thun/medium/398_402.jpg"/></a></div>
+                <div class="title"><h3>Чайные Сервизы</h3></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end: Row -->
+
+    <hr>
+
+</div>
+<!--end: Container-->
+
+{% include 'widgets/sitemap.html.twig' %}
+
+{% endblock %}

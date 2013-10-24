@@ -1,0 +1,7 @@
+<div class="clients-carousel">
+    <ul class="slides clients">
+        {% for rProduct in randomProducts %}
+            <li class="text-center"><a href="{{ rProduct.getProductLink() }}"><img src="{{ rProduct.getProductImage() }}" alt="{{ rProduct.getName() }}"/><p>{{ rProduct.getName()|title }}</p></a></li>
+        {% endfor %}
+    </ul>
+</div>

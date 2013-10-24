@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+<!--start: Container -->
+<div class="container">
+
+    <!-- start: Row -->
+    <div class="row">
+
+        <!-- start: Categories -->
+        <div class="span3">
+
+            <div id="cart-widget">
+                {% include 'widgets/cart.html.twig' %}
+            </div>
+
+            <ul class="subcat-list">
+                {% for subcat in category.getSubcategories() %}
+                    <li{% if subcat.getSeoLink() == subcategory.getSeoLink()|default(null) %} class="active"{% endif %}><a href="/thun/{{ category.getSeoLink() }}/{{ subcat.getSeoLink() }}">{{ subcat.getDisplayName()|title }} <i>({{ subcat.getProducts().count() }})</i></a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- end: Categories -->
+
+        <div class="span9">
+            {% block products %}{% endblock %}
+        </div>
+
+    </div>
+    <!-- end: Row -->
+
+</div>
+<!--end: Container-->
+{% endblock %}
